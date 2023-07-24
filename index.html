@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Recipe finder</title>
+  </head>
+  <body>
+    <h1>Cocktail Finder</h1>
+    <form>
+      <!-- ingredient -->
+      <label for="ingredients"
+        >I'm looking for
+
+        <!-- does this API allow multi-filtering? -->
+        <select id="ingredients" name="ingredients">
+          <option value="Gin">Gin</option>
+          <option value="Rum">Rum</option>
+          <option value="Vodka">Vodka</option>
+          <option value="Tequila">Tequila</option>
+          <option value="Whiskey">Whiskey</option>
+          <option value="Brandy">Brandy</option>
+          <option value="Triple sec">Triple Sec</option>
+          <option value="Scotch">Scotch</option>
+        </select>
+
+        cocktails
+      </label>
+
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="favs-block">
+      <h2>Favorites</h2>
+      <div id="favorites-list"></div>
+    </div>
+
+    <div id="modal"></div>
+
+    <div id="results">
+      <!-- dynamically populate results here based on response from API -->
+      <!-- example to test css! -->
+      <!-- <div class="result">
+        <h2>Cockatil 1!</h2>
+        <img src="banana.jpeg" alt="this is a banana" />
+        <p>info about recipe</p>
+      </div> -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

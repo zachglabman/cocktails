@@ -1,0 +1,205 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.result {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.result h2 {
+  margin: 0;
+  cursor: pointer;
+}
+.result img {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.result p {
+  margin-top: 10px;
+}
+
+/* overlay covers the whole page, except modal */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  backdrop-filter: blur(5px); /* apply a blur effect to the background */
+  display: none; /* hide the overlay by default */
+}
+
+#favs-block {
+  margin: 20px;
+}
+
+/* for testing purposes */
+#favorites-list {
+  display: flex;
+  overflow: auto;
+}
+
+.favorite {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.favorite h2 {
+  margin: 0;
+  /* this isnt working for some reason */
+  cursor: pointer;
+}
+.favorite img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.favorite p {
+  margin-top: 10px;
+}
+
+.add-to-favorites {
+  margin: auto;
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-to-favorites:hover {
+  background-color: darkgreen;
+}
+
+.remove-from-favorites {
+  margin: auto;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.remove-from-favorites:hover {
+  background-color: darkred;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 800px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 2;
+  filter: none;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+/* ipad view is special, single column */
+@media (max-width: 800px) {
+  #modal {
+    width: 70%;
+  }
+  /* .favorite {
+    min-width: 25%;
+  } */
+}
+@media (max-width: 500px) {
+  /* recalculate to match web view on mobile */
+  .result {
+    width: calc(40% - 20px);
+    margin: 10px;
+  }
+  .result h2 {
+    font-size: smaller;
+  }
+  .favorite {
+    width: calc(40% - 20px);
+  }
+  .favorite h4 {
+    margin: 0;
+  }
+  #modal {
+    width: 70%;
+  }
+}
